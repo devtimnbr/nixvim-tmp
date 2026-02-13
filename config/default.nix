@@ -10,5 +10,6 @@
     ./lsp
     ./lang
     ./blink.nix
+    ./transparent.nix
   ];
 }
