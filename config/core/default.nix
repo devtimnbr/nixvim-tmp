@@ -2,7 +2,7 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./colorscheme.nix
+    #./colorscheme.nix
     ./functions.nix
     ./mappings.nix
     ./options.nix
