@@ -1,5 +1,5 @@
 # This is common neovim settings with basic plugin sets
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./colorscheme.nix
@@ -16,7 +16,6 @@
     maplocalleader = ",";
     formatsave = true;
     floating_window_options.border = "rounded";
-    clipboard = "wl-copy";
   };
 
   opts = {
@@ -139,6 +138,6 @@
     ];
   };
 
-  extraPackages = with pkgs; [ wl-clipboard ];
+  extraPackages = with pkgs; lib.optional (!stdenv.isDarwin) wl-clipboard;
   extraLuaPackages = lp: with lp; [ luarocks ];
 }
